@@ -2,6 +2,8 @@
 
 Used to download files to qbittorrent through a telegram bot.
 
+Requires qbittorrent web interface to be enabled to prot 8081.
+
 Send the bot a magnet link and it will download it and notify you when your download completes.
 
 There are also several commands:
