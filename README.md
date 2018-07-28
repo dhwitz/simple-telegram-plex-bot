@@ -10,3 +10,4 @@ There are also several commands:
 * /status - shows the number of things downloading and in queue
 * /queue - shows a list of all items in the queue
 * /delete - deletes a currenty downloading item by name
+* /anime - send the media to a different folder
