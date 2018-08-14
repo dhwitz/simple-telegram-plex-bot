@@ -12,7 +12,7 @@ def main():
     global update_id
     # Telegram Bot Authorization Token
 
-    bot = telegram.Bot('_______________') #token goes here
+    bot = telegram.Bot('__________') #token goes here
 
     try:
         update_id = bot.get_updates()[0].update_id
@@ -73,13 +73,23 @@ def bit(bot):
 
             elif update.message.text.startswith("/anime"):
                 qb = Client('http://127.0.0.1:8081/')
-                dl_path = 'd:/Plex/Anime/TV Shows'
+                dl_path = 'Y:/'
                 qb.download_from_link(update.message.text[7:], savepath = dl_path)
                 temp = qb.torrents()
                 for dictn in temp:
                     if dictn['hash'] not in current_queue:
                         current_queue[dictn['hash']] = [update.message.chat_id, dictn['name']]
-                update.message.reply_text("Torrent has been added to the list.")                
+                update.message.reply_text("Torrent has been added to the list ~desu \n\n^_^") 
+            
+            elif update.message.text.startswith("/tv") or update.message.text.startswith("/TV"):
+                qb = Client('http://127.0.0.1:8081/')
+                dl_path = 'X:/'
+                qb.download_from_link(update.message.text[4:], savepath = dl_path)
+                temp = qb.torrents()
+                for dictn in temp:
+                    if dictn['hash'] not in current_queue:
+                        current_queue[dictn['hash']] = [update.message.chat_id, dictn['name']]
+                update.message.reply_text("Torrent has been added to the list.")               
 
             elif update.message.text == "/status":
                 temp = gettorrents()
