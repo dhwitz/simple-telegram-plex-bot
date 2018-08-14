@@ -11,3 +11,4 @@ There are also several commands:
 * /queue - shows a list of all items in the queue
 * /delete - deletes a currenty downloading item by name
 * /anime - send the media to a different folder
+* /tv - send the media to a different folder
